@@ -1,4 +1,5 @@
-﻿public class Program 
+﻿using TECHCOOL.UI;
+public class Program 
 {
 	public static void Main(string[] args)
 	{
