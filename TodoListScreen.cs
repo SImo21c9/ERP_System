@@ -1,6 +1,5 @@
 namespace ERP_System;
 using TECHCOOL.UI;
- 
 
 public class TodoListScreen : Screen
 {
@@ -17,6 +16,8 @@ public class TodoListScreen : Screen
         //...
         listPage.AddColumn("Todo", "Title");
 
-        listPage.Draw();
+        listPage.Select();
+
+       
     }
 }
