@@ -20,7 +20,7 @@ public partial class Database
     }
 
 
-        Company[] GetCompanies()
+        public Company[] GetCompanies()
         {
             Company[] list = new Company[companies.Count];
             for (int i = 0; i < list.Length; i++)

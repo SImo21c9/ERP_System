@@ -10,8 +10,9 @@ public class CompanyListPage : Screen
     {
         ListPage<Company> lp = new();
         lp.AddColumn("Name", nameof(Company.Name));
+        lp.AddColumn("Street", nameof(Company.Street));
  
-        lp.Add(Database.Instance.GetCompanyById());
+        lp.Add(Database.Instance.GetCompanies());
  
         lp.Select();
     }
