@@ -21,5 +21,7 @@ public class CompanyListPage : Screen
         lp.Add(Database.Instance.GetCompanies());
  
         lp.Select();
+        
+        
     }
 }
