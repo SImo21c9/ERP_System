@@ -7,9 +7,9 @@ public class Program
 		new Database();
 		Database.Instance.AddCompany( new()
 		{
-			CompanyName = "THans",
-			Name = "Hansen",
-			Street = "123 Main Street"
+			CompanyName = "LNE Security A/S", 
+			Country = "Denmark",
+			Currency = Currency.DKK 
 		});
 		
 		//MyFirstScreen firstScreen = new MyFirstScreen();
