@@ -8,7 +8,7 @@ public partial class Database
     {
         foreach (var company in companies)
         {
-            if (company.ComapnyId == id)
+            if (company.CompanyId == id)
             {
                 return company;
             }
@@ -33,7 +33,7 @@ public partial class Database
 
         public void AddCompany(Company company)
         {
-            if (company.ComapnyId == 0)
+            if (company.CompanyId == 0)
             {
                 companies.Add(company);
             }
@@ -41,25 +41,27 @@ public partial class Database
 
         public void UpdateCompany(Company company)
         {
-            if (company.ComapnyId == 0)
+            if (company.CompanyId == 0)
             {
                 return;
             }
 
-            Company? oldCompany = GetCompanyById(company.ComapnyId);
+            Company? oldCompany = GetCompanyById(company.CompanyId);
                 if (oldCompany == null)
                 {
                     return;
                 }
 
-                oldCompany.CampanyName = company.Name;
+                oldCompany.CompanyName = company.Name;
         }
         
         public void DeleteCompany(int id)
         {
             Company? found = GetCompanyById(id);
-            
-            
+            if (found != null)
+            {
+                companies.Remove(found);
+            }
         }
         
         

@@ -4,10 +4,15 @@ namespace ERP_System;
 
 public class CompanyListPage : Screen
 {
-    public override string Title { get; set; } = "Virksomheder";
-
+    public override string Title {get; set;} = "Company";
+ 
     protected override void Draw()
     {
-        List<Company> companies = new List<Company>();
+        ListPage<Company> lp = new();
+        lp.AddColumn("Name", nameof(Company.Name));
+ 
+        lp.Add(Database.Instance.GetCompanyById());
+ 
+        lp.Select();
     }
 }
