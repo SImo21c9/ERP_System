@@ -4,7 +4,8 @@ public class Program
 {
 	public static void Main(string[] args)
 	{
-		new Database();
+		
+	    new Database();
 		Database.Instance.AddCompany( new()
 		{
 			CompanyName = "LNE Security A/S", 
@@ -17,7 +18,9 @@ public class Program
 			
 		});
 		CompanyListPage companyListPage = new CompanyListPage();
-		Screen.Display(companyListPage);
+		Screen.Display(companyListPage); 
+		
+		
 		
 		//MyFirstScreen firstScreen = new MyFirstScreen();
 		//Screen.Display(firstScreen);

@@ -1,3 +1,5 @@
+using Mysqlx.Expect;
+
 namespace ERP_System;
 using TECHCOOL.UI;
 
@@ -14,13 +16,19 @@ public  class CompanyInfo : Screen
 
     protected override void Draw()
     {
-        Console.WriteLine("Try");
+        Console.WriteLine("Try F2 for editing");
+        Console.WriteLine("");
+        Console.WriteLine("Virksomhed:" + _company.CompanyName);
+        Console.WriteLine("Valuta:" +  _company.Currency);
         
-        ConsoleKeyInfo key = Console.ReadKey();
-        switch (key, key)
+        ConsoleKeyInfo keyInfo = Console.ReadKey();
+        ConsoleKey key = keyInfo.Key;
+        switch (key)
         {
             case ConsoleKey.F2:
-                Display((new CompanyEdit(_company)));
+                Display((new  CompanyEdit(_company)));
+                break;
+            default: 
                 break;
         }
     }
