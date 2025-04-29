@@ -11,16 +11,15 @@ public class Program
 			Country = "Denmark",
 			Currency = Currency.DKK 
 		});
+		CompanyListPage companyListPage = new CompanyListPage();
+		Screen.Display(companyListPage);
 		
 		//MyFirstScreen firstScreen = new MyFirstScreen();
 		//Screen.Display(firstScreen);
 		//TodoListScreen todolistscreen = new TodoListScreen();
 		//Screen.Display(todolistscreen);
 
-		CompanyListPage companyListPage = new CompanyListPage();
-		Screen.Display(companyListPage);
-		//List<Company> companies = new List<Company> { new Company { Name = "Virksomhed 1" }, new Company { Name = "Virksomhed 2" } };
-		//Screen.Display(companies);
+		
 	}
 }
 
