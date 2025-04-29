@@ -15,6 +15,7 @@ public class CompanyListPage : Screen
         lp.AddColumn("City", nameof(Company.City));
         lp.AddColumn("Street", nameof(Company.Street));
         lp.AddColumn("Street Number", nameof(Company.StreetNumber));
+        lp.AddColumn("Address", nameof(Company.Address));
         
 
 
