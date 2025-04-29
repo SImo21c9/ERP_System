@@ -9,5 +9,6 @@ public class Company
     public string City { get; set; } = "";
     public string Country { get; set; } = "";
     public Currency Currency { get; set; }
+    public string CampanyName { get; set; }
 
 }
