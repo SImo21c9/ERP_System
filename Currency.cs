@@ -2,6 +2,6 @@ namespace ERP_System
 {
    public enum Currency
    {
-      DKK,SEK,USD, EUR
+      DKK, SEK, USD, EUR
    }
 }
