@@ -7,8 +7,9 @@ public class Program
 		new Database();
 		Database.Instance.AddCompany( new()
 		{
-			CompanyName = "Hans"
-
+			CompanyName = "THans",
+			Name = "Hansen",
+			Street = "123 Main Street"
 		});
 		
 		//MyFirstScreen firstScreen = new MyFirstScreen();

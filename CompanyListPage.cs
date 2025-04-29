@@ -11,6 +11,7 @@ public class CompanyListPage : Screen
         ListPage<Company> lp = new();
         lp.AddColumn("Name", nameof(Company.Name));
         lp.AddColumn("Street", nameof(Company.Street));
+        lp.AddColumn("CompanyName", nameof(Company.CompanyName));
  
         lp.Add(Database.Instance.GetCompanies());
  
