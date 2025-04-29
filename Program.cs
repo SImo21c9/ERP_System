@@ -13,6 +13,7 @@ public class Program
 			Street = "Skibbyggerivej",
 			StreetNumber = "5",
 			City = "Aalborg",
+			Address = "9000"
 			
 		});
 		CompanyListPage companyListPage = new CompanyListPage();
