@@ -9,7 +9,11 @@ public class Program
 		{
 			CompanyName = "LNE Security A/S", 
 			Country = "Denmark",
-			Currency = Currency.DKK 
+			Currency = Currency.DKK, 
+			Street = "Skibbyggerivej",
+			StreetNumber = "5",
+			City = "Aalborg",
+			
 		});
 		CompanyListPage companyListPage = new CompanyListPage();
 		Screen.Display(companyListPage);

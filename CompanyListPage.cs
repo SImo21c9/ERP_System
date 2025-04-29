@@ -11,8 +11,13 @@ public class CompanyListPage : Screen
         ListPage<Company> lp = new();
         lp.AddColumn("Currency", nameof(Company.Currency));
         lp.AddColumn("Country", nameof(Company.Country));
-        lp.AddColumn("CompanyName", nameof(Company.CompanyName));
- 
+        lp.AddColumn("Company Name", nameof(Company.CompanyName));
+        lp.AddColumn("City", nameof(Company.City));
+        lp.AddColumn("Street", nameof(Company.Street));
+        lp.AddColumn("Street Number", nameof(Company.StreetNumber));
+        
+
+
         lp.Add(Database.Instance.GetCompanies());
  
         lp.Select();
