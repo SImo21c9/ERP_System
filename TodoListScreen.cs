@@ -1,23 +1,21 @@
-namespace ERP_System;
-using TECHCOOL.UI;
-
 public class TodoListScreen : Screen
 {
-    public override string Title { get; set; } = "List of tasks to do"; 
+    public override string Title { get; set; } = "List of tasks to do";
+
     protected override void Draw()
     {
-        
-        Clear(); //Clean the screen
-        //Gonna draw a list page here
+        Clear(); // Rydder skærmen
+
         ListPage<Todo> listPage = new ListPage<Todo>();
+
+        // Tilføjer eksempler på TODO-opgaver
         listPage.Add(new Todo("Buy milk"));
         listPage.Add(new Todo("Walk the dog", 2));
         listPage.Add(new Todo("Clean toilet"));
-        //...
+
+        // Vis kolonne med titel
         listPage.AddColumn("Todo", "Title");
 
-        listPage.Select();
-
-       
+        listPage.Select(); // Vis listen og lad brugeren vælge
     }
 }

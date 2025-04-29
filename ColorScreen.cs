@@ -1,8 +1,6 @@
-using TECHCOOL.UI;
-namespace ERP_System;
-
 public abstract class ColorScreen : Screen
 {
+    // Tilpasset skærm med farver for tekst og baggrund
     public ColorScreen() : base()
     {
         DefaultForeground = ConsoleColor.Yellow;

@@ -1,12 +1,10 @@
-
-using TECHCOOL.UI;
 public class MyFirstScreen : Screen
 {
-    public override string Title { get; set; } = "My first screen"; 
+    public override string Title { get; set; } = "My first screen";
+
     protected override void Draw()
     {
-        //...
-        Clear();
-        Console.WriteLine("My first screen!");
+        Clear(); // Rydder skærmen
+        Console.WriteLine("My first screen!"); // Simpel demo
     }
 }

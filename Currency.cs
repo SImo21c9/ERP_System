@@ -1,7 +1,7 @@
-namespace ERP_System
+namespace ERP_System;
+
+// Valutatyper der kan vælges til virksomheder
+public enum Currency
 {
-   public enum Currency
-   {
-      DKK, SEK, USD, EUR, RUB 
-   }
+    DKK, SEK, USD, EUR, RUB
 }

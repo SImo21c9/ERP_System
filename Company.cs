@@ -1,15 +1,15 @@
 namespace ERP_System;
 
+// Repræsenterer en virksomhed med adresse og information
 public class Company
 {
-    public int CompanyId { get; set; }
-    public string Name { get; set; } = "";
-    public string Street { get; set; } = "";
-    public string StreetNumber { get; set; } = "";
-    public string City { get; set; } = "";
-    public string Address { get; set; } = "";
-    public string Country { get; set; } = "";
-    public Currency Currency { get; set; }
-    public string CompanyName { get; set; }
-
+    public int CompanyId { get; set; }              // ID (bruges til søgning/opdatering)
+    public string Name { get; set; } = "";          // Internt navn (bruges fx i Update)
+    public string Street { get; set; } = "";        // Vejnavn
+    public string StreetNumber { get; set; } = "";  // Husnummer
+    public string City { get; set; } = "";          // By
+    public string Address { get; set; } = "";       // Postnummer eller samlet adresse
+    public string Country { get; set; } = "";       // Land
+    public Currency Currency { get; set; }          // Valuta
+    public string CompanyName { get; set; }         // Visningsnavn (bruges i UI)
 }
