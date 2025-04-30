@@ -1,6 +1,6 @@
 using TECHCOOL.UI;
 namespace ERP_System;
-using TECHCOOL.UI;
+
 public partial class CompanyListPage : Screen
 {
     public override string Title { get; set; } = "Company";
