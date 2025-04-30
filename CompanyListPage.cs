@@ -1,3 +1,4 @@
+using TECHCOOL.UI;
 namespace ERP_System;
 
 // Sk�rmbillede der viser listen over virksomheder
