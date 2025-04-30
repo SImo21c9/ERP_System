@@ -1,4 +1,9 @@
+using TECHCOOL.UI;
+namespace ERP_System;
+
 public class Todo
+
+
 {
     // Enum til at markere opgavens status
     public enum TodoState { Todo, Started, Done }

@@ -1,4 +1,7 @@
-﻿public class Program
+﻿using TECHCOOL.UI;
+namespace ERP_System;
+
+public class Program
 {
     public static void Main(string[] args)
     {

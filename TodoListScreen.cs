@@ -1,3 +1,6 @@
+using TECHCOOL.UI;
+namespace ERP_System;
+
 public class TodoListScreen : Screen
 {
     public override string Title { get; set; } = "List of tasks to do";

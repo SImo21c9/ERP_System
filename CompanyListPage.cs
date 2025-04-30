@@ -1,4 +1,6 @@
 namespace ERP_System;
+using TECHCOOL.UI;
+
 
 // Skærmbillede der viser listen over virksomheder
 public class CompanyListPage : Screen

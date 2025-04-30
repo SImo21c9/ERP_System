@@ -1,4 +1,5 @@
 namespace ERP_System;
+using TECHCOOL.UI;
 
 // Håndterer lagring og adgang til virksomhedsdata
 public partial class Database

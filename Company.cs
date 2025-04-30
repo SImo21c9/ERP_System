@@ -1,4 +1,6 @@
 namespace ERP_System;
+using TECHCOOL.UI;
+
 
 // Repræsenterer en virksomhed med adresse og information
 public class Company
