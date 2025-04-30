@@ -19,7 +19,7 @@ public  class CompanyInfo : Screen
         Console.WriteLine("Try F2 for editing");
         Console.WriteLine("");
         Console.WriteLine("Virksomhed:" + _company.CompanyName);
-        Console.WriteLine("Valuta:" +  _company.Currency);
+        Console.WriteLine("Currency:" +  _company.Currency);
         
         ConsoleKeyInfo keyInfo = Console.ReadKey();
         ConsoleKey key = keyInfo.Key;

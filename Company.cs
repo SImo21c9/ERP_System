@@ -1,9 +1,9 @@
 namespace ERP_System;
 
-// Repræsenterer en virksomhed med adresse og information
+// ReprÃ¦senterer en virksomhed med adresse og information
 public class Company
 {
-    public int CompanyId { get; set; }              // ID (bruges til søgning/opdatering)
+    public int CompanyId { get; set; }              // ID (bruges til sÃ¸gning/opdatering)
     public string Name { get; set; } = "";          // Internt navn (bruges fx i Update)
     public string Street { get; set; } = "";        // Vejnavn
     public string StreetNumber { get; set; } = "";  // Husnummer
