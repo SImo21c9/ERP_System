@@ -27,5 +27,14 @@ public partial class CompanyListPage : Screen
         {
             Display(new CompanyInfo(selected));
         }
+
+        ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+        if (keyInfo.Key == ConsoleKey.F1)
+        {
+            Company newCompany = new(); // tom virksomhed
+            Database.Instance.AddCompany(newCompany); // tilføj til database
+            Display(new CompanyEdit(newCompany)); // gå til redigering
+        }
     }
 }
