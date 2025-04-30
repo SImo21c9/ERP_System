@@ -6,11 +6,12 @@ public class CompanyEdit : Screen
 {
     public override string Title { get; set; } = "Company";
     private Company _company;
-
+    
     public CompanyEdit(Company company)
     {
         _company = company;
     }
+
 
     protected override void Draw()
     {
