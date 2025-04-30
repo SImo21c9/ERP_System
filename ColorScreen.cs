@@ -1,8 +1,8 @@
-/*
+using TECHCOOL.UI;
 
 public abstract class ColorScreen : Screen
 {
-    // Tilpasset skærm med farver for tekst og baggrund
+    // Tilpasset skï¿½rm med farver for tekst og baggrund
     public ColorScreen() : base()
     {
         DefaultForeground = ConsoleColor.Yellow;
@@ -13,4 +13,3 @@ public abstract class ColorScreen : Screen
         FieldBackground = ConsoleColor.DarkGray;
     }
 }
-*/

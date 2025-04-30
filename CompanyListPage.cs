@@ -1,9 +1,7 @@
 namespace ERP_System;
-using TECHCOOL.UI;
 
-
-// Skærmbillede der viser listen over virksomheder
-public class CompanyListPage : Screen
+// Skï¿½rmbillede der viser listen over virksomheder
+public partial class CompanyListPage : Screen
 {
     public override string Title { get; set; } = "Company";
 
@@ -11,7 +9,7 @@ public class CompanyListPage : Screen
     {
         ListPage<Company> lp = new(); // Opret listevisning for virksomheder
 
-        // Tilføj kolonner til visning
+        // Tilfï¿½j kolonner til visning
         lp.AddColumn("Currency", nameof(Company.Currency));
         lp.AddColumn("Country", nameof(Company.Country));
         lp.AddColumn("Company Name", nameof(Company.CompanyName));
@@ -20,9 +18,14 @@ public class CompanyListPage : Screen
         lp.AddColumn("Street Number", nameof(Company.StreetNumber));
         lp.AddColumn("Address", nameof(Company.Address));
 
-        // Tilføj data fra databasen
+        // Tilfï¿½j data fra databasen
         lp.Add(Database.Instance.GetCompanies());
 
-        lp.Select(); // Start interaktiv visning
+        Company selected = lp.Select(); // Start interaktiv visning
+
+        if (selected != null)
+        {
+            Display(new CompanyInfo(selected));
+        }
     }
 }

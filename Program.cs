@@ -23,7 +23,7 @@ public class Program
         // Vis skærmen med virksomhedsliste
         Screen.Display(new CompanyListPage());
 
-        // Alternativt: vis andre skærme
+        // Alternativt: vis andre screen
         //Screen.Display(new MyFirstScreen());
         //Screen.Display(new TodoListScreen());
     }
