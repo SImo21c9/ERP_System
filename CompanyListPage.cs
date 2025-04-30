@@ -1,7 +1,6 @@
 using TECHCOOL.UI;
 namespace ERP_System;
-
-// Sk�rmbillede der viser listen over virksomheder
+using TECHCOOL.UI;
 public partial class CompanyListPage : Screen
 {
     public override string Title { get; set; } = "Company";
