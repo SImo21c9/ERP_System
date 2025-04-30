@@ -1,3 +1,5 @@
+/*
+
 public abstract class ColorScreen : Screen
 {
     // Tilpasset skærm med farver for tekst og baggrund
@@ -11,3 +13,4 @@ public abstract class ColorScreen : Screen
         FieldBackground = ConsoleColor.DarkGray;
     }
 }
+*/

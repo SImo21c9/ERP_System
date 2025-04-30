@@ -1,4 +1,6 @@
-﻿using TECHCOOL.UI;
+﻿/*
+
+using TECHCOOL.UI;
 
 namespace ERP_System;
 
@@ -32,3 +34,4 @@ public class CompanyListPage : Screen
         }
     }
 }
+*/
