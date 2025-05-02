@@ -28,6 +28,9 @@ public  class CompanyInfo : Screen
             case ConsoleKey.F2:
                 Display(new CompanyEdit(_company));
                 break;
+            case ConsoleKey.F1:
+                Display(new CompanyEdit(_company));
+                break;
             default: 
                 break;
         }

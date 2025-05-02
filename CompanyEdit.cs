@@ -11,8 +11,7 @@ public class CompanyEdit : Screen
     {
         _company = company;
     }
-
-
+    
     protected override void Draw()
     {
         Form<Company> editForm = new();
