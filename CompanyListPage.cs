@@ -1,15 +1,15 @@
 using TECHCOOL.UI;
 namespace ERP_System;
-
+using TECHCOOL.UI;
 public partial class CompanyListPage : Screen
 {
     public override string Title { get; set; } = "Company";
 
     protected override void Draw()
     {
-        ListPage<Company> lp = new(); // Opret listevisning for virksomheder
 
-        // Tilf�j kolonner til visning
+        ListPage<Company> lp = new(); // Opret listevisning for virksomheder
+        // Tilføj kolonner til visning
         lp.AddColumn("Currency", nameof(Company.Currency));
         lp.AddColumn("Country", nameof(Company.Country));
         lp.AddColumn("Company Name", nameof(Company.CompanyName));
@@ -18,7 +18,7 @@ public partial class CompanyListPage : Screen
         lp.AddColumn("Street Number", nameof(Company.StreetNumber));
         lp.AddColumn("Address", nameof(Company.Address));
 
-        // Tilf�j data fra databasen
+        // Tilføj data fra databasen
         lp.Add(Database.Instance.GetCompanies());
 
         Company selected = lp.Select(); // Start interaktiv visning
@@ -32,9 +32,9 @@ public partial class CompanyListPage : Screen
 
         if (keyInfo.Key == ConsoleKey.F1)
         {
-            Company newCompany = new(); // tom virksomhed
-            Database.Instance.AddCompany(newCompany); // tilføj til database
-            Display(new CompanyEdit(newCompany)); // gå til redigering
+            Company newCompany = new();
+            Database.Instance.AddCompany(newCompany);
+            Display(new CompanyEdit(newCompany));
         }
     }
 }

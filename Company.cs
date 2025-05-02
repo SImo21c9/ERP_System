@@ -10,6 +10,7 @@ public class Company
     public string Street { get; set; } = "";        // Vejnavn
     public string StreetNumber { get; set; } = "";  // Husnummer
     public string City { get; set; } = "";          // By
+    public string PostCode { get; set; } = "";
     public string Address { get; set; } = "";       // Postnummer eller samlet adresse
     public string Country { get; set; } = "";       // Land
     public Currency Currency { get; set; }          // Valuta

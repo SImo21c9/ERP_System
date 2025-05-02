@@ -5,6 +5,7 @@ using TECHCOOL.UI;
 public partial class Database
 {
     private List<Company> companies = new(); // Intern liste over virksomheder
+    private int nextCompanyId = 1;
 
     // Finder og returnerer en virksomhed baseret p� dens ID, eller null hvis den ikke findes
     public Company? GetCompanyById(int id)
@@ -30,6 +31,8 @@ public partial class Database
     {
         if (company.CompanyId == 0)
         {
+            company.CompanyId = nextCompanyId++;
+            company.Name = company.CompanyName; // Sørg for at Name også er sat
             companies.Add(company);
         }
     }
@@ -39,6 +42,7 @@ public partial class Database
     {
         if (company.CompanyId == 0)
         {
+            AddCompany(company);
             return; // ID ikke angivet � kan ikke opdatere
         }
 
@@ -48,7 +52,14 @@ public partial class Database
             return; // Virksomheden findes ikke
         }
 
-        oldCompany.CompanyName = company.Name; // Opdater navnet
+        oldCompany.CompanyName = company.CompanyName;
+        oldCompany.Name = company.CompanyName; 
+        oldCompany.Street = company.Street;
+        oldCompany.StreetNumber = company.StreetNumber;
+        oldCompany.City = company.City;
+        oldCompany.Address = company.Address;
+        oldCompany.Country = company.Country;
+        oldCompany.Currency = company.Currency;
     }
 
     // Sletter en virksomhed baseret p� ID
