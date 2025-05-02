@@ -21,7 +21,11 @@ public class CompanyEdit : Screen
         editForm.AddOption("Currency", "Dansk kroner", Currency.DKK);
         editForm.AddOption("Currency", "Svenske kroner", Currency.SEK);
         editForm.AddOption("Currency", "Euro", Currency.EUR);
-        editForm.TextBox("Land", nameof(Company.Country));
+        editForm.SelectBox("Country", "Country");
+        editForm.AddOption("Country", "Denmark", Country.Denmark);
+        editForm.AddOption("Country", "Sweden", Country.Sweden);
+        editForm.AddOption("Country", "Russia", Country.Russia);
+        editForm.AddOption("Country", "Australia", Country.Australia);
 
         if (editForm.Edit(_company))
         {

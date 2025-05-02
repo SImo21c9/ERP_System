@@ -12,7 +12,7 @@ public class Program
         Database.Instance.AddCompany(new()
         {
             CompanyName = "LNE Security A/S",
-            Country = "Denmark",
+            Country = Country.Denmark,
             Currency = Currency.DKK,
             Street = "Skibbyggerivej",
             StreetNumber = "5",
