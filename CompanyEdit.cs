@@ -19,8 +19,8 @@ public class CompanyEdit : Screen
         Form<Company> editForm = new();
         
         editForm.TextBox("Virksomhed", nameof(Company.CompanyName));
-        editForm.TextBox("Valuta", nameof(Company.Currency));
-        editForm.AddOption("Currency", "Dansk kroner", DKK);
+        editForm.SelectBox("Valuta", nameof(Company.Currency));
+        editForm.AddOption("Currency", "Dansk kroner", Currency.DKK);
         editForm.AddOption("Currency", "Svenske kroner", Currency.SEK);
         editForm.AddOption("Currency", "Euro", Currency.EUR);
         editForm.TextBox("Land", nameof(Company.Country));
