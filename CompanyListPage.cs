@@ -17,6 +17,7 @@ public partial class CompanyListPage : Screen
         lp.AddColumn("Street", nameof(Company.Street));
         lp.AddColumn("Street Number", nameof(Company.StreetNumber));
         lp.AddColumn("Address", nameof(Company.Address));
+        
 
         // Tilføj data fra databasen
         lp.Add(Database.Instance.GetCompanies());
@@ -29,7 +30,7 @@ public partial class CompanyListPage : Screen
         }
 
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-
+        
         if (keyInfo.Key == ConsoleKey.F1)
         {
             Company newCompany = new();
