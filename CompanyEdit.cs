@@ -22,10 +22,19 @@ public class CompanyEdit : Screen
         editForm.AddOption("Currency", "Svenske kroner", Currency.SEK);
         editForm.AddOption("Currency", "Euro", Currency.EUR);
         editForm.SelectBox("Country", "Country");
-        editForm.AddOption("Country", "Denmark", Country.Denmark);
-        editForm.AddOption("Country", "Sweden", Country.Sweden);
-        editForm.AddOption("Country", "Russia", Country.Russia);
-        editForm.AddOption("Country", "Australia", Country.Australia);
+        Country[] topGdpCountries = new[]
+        {
+            Country.UnitedStates,
+            Country.Denmark,
+            Country.China,
+            Country.Germany,
+            Country.Sweden
+        };
+
+        foreach (var country in topGdpCountries)
+        {
+            editForm.AddOption("Country", country.ToString(), country);
+        }
         //HELLO DELETE ME PLEASE
         if (editForm.Edit(_company))
         {
@@ -33,5 +42,6 @@ public class CompanyEdit : Screen
         }
 
         Display(new CompanyInfo(_company));
+        
     }
 }
