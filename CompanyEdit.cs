@@ -26,7 +26,7 @@ public class CompanyEdit : Screen
         editForm.AddOption("Country", "Sweden", Country.Sweden);
         editForm.AddOption("Country", "Russia", Country.Russia);
         editForm.AddOption("Country", "Australia", Country.Australia);
-
+        //HELLO DELETE ME PLEASE
         if (editForm.Edit(_company))
         {
             Database.Instance.UpdateCompany(_company);
