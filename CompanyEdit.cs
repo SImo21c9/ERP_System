@@ -15,17 +15,17 @@ public class CompanyEdit : Screen
 
     protected override void Draw()
     {
+        
         Form<Company> editForm = new();
+        
         editForm.TextBox("Virksomhed", nameof(Company.CompanyName));
-        editForm.AddOption("Currency", "Dansk kroner", Currency.DKK);
+        editForm.TextBox("Valuta", nameof(Company.Currency));
+        editForm.AddOption("Currency", "Dansk kroner", DKK);
         editForm.AddOption("Currency", "Svenske kroner", Currency.SEK);
         editForm.AddOption("Currency", "Euro", Currency.EUR);
         editForm.TextBox("Land", nameof(Company.Country));
 
-        if (editForm.Edit(_company))
-        {
-            Database.Instance.UpdateCompany(_company);
-        }
+        editForm.Edit(_company);
 
         Display(new CompanyInfo(_company));
     }
