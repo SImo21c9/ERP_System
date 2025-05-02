@@ -26,7 +26,7 @@ public  class CompanyInfo : Screen
         switch (key)
         {
             case ConsoleKey.F2:
-                Display((new  CompanyEdit(_company)));
+                Display(new CompanyEdit(_company));
                 break;
             default: 
                 break;
