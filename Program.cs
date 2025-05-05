@@ -30,7 +30,6 @@ public class Program
         menu.Add(companyListPage);
         
         
-        
         Screen.Display(menu);
         //menu.Add(new CompanyListPage());
         
