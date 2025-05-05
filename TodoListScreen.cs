@@ -9,7 +9,7 @@ public class TodoListScreen : Screen
         Clear(); // Rydder sk�rmen
 
         ListPage<Todo> listPage = new ListPage<Todo>();
-
+        
         // Tilf�jer eksempler p� TODO-opgaver
         listPage.Add(new Todo("Buy milk"));
         listPage.Add(new Todo("Walk the dog", 2));
