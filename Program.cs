@@ -26,9 +26,9 @@ public class Program
         //for now this doesn't do anything because for some reason CompanyListPage doesn't return any values
         //But this is the way to go (at least we think)  
         CompanyListPage companyListPage = new CompanyListPage();
-        Menu menu = new Menu();
+        TECHCOOL.UI.Menu menu = new TECHCOOL.UI.Menu();
         menu.Add(companyListPage);
-        menu.Add(companyListPage);
+        
         
         
         Screen.Display(menu);
