@@ -1,5 +1,4 @@
 using TECHCOOL.UI;
-
 namespace ERP_System;
 
 public class CompanyEdit : Screen
