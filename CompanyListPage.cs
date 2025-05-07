@@ -1,6 +1,6 @@
-using TECHCOOL.UI;
 namespace ERP_System;
 using TECHCOOL.UI;
+using System.Linq;
 public partial class CompanyListPage : Screen
 {
     public override string Title { get; set; } = "Company";
@@ -17,26 +17,44 @@ public partial class CompanyListPage : Screen
         lp.AddColumn("Street", nameof(Company.Street));
         lp.AddColumn("Street Number", nameof(Company.StreetNumber));
         lp.AddColumn("Address", nameof(Company.Address));
-        
+
 
         // Tilføj data fra databasen
-        lp.Add(Database.Instance.GetCompanies());
+        lp.Add(Database.Instance.GetCompanies().ToList());
+
 
         Company selected = lp.Select(); // Start interaktiv visning
 
-        if (selected != null)
-        {
-            
-            Display(new CompanyInfo(selected));
-        }
-
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-        
-        if (keyInfo.Key == ConsoleKey.F1)
+        switch (keyInfo.Key)
         {
-            Company newCompany = new();
-            Database.Instance.AddCompany(newCompany);
-            Display(new CompanyEdit(newCompany));
+            case ConsoleKey.F1: // V4: Opret ny virksomhed
+                Company newCompany = new();
+                Database.Instance.AddCompany(newCompany);
+                Display(new CompanyEdit(newCompany));
+                break;
+
+            case ConsoleKey.F2: // V5: Rediger valgte virksomhed
+                if (selected != null)
+                {
+                    Display(new CompanyEdit(selected));
+                }
+                break;
+
+            case ConsoleKey.F5: // V6: Slet valgte virksomhed
+                if (selected != null)
+                {
+                    Database.Instance.DeleteCompany(selected.CompanyId);
+                    Display(new CompanyListPage()); // Opdater visningen
+                }
+                break;
+
+            default:
+                if (selected != null)
+                {
+                    Display(new CompanyInfo(selected));
+                }
+                break;
         }
     }
 }
