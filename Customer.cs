@@ -3,7 +3,7 @@ using System.Runtime.InteropServices.JavaScript;
 
 namespace ERP_System;
 
-public class Costumer : Person
+public class Customer : Person
 {
     private static HashSet<string> existingCostumers = new HashSet<string>();
     private string costumerId;
