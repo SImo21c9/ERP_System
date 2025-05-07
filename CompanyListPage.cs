@@ -26,6 +26,7 @@ public partial class CompanyListPage : Screen
 
         if (selected != null)
         {
+            
             Display(new CompanyInfo(selected));
         }
 

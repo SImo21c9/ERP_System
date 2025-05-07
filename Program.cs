@@ -5,37 +5,13 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        // Initialiser singleton-databasen
-        /*new Database();
-
-        // Tilføj testvirksomhed
-        Database.Instance.AddCompany(new()
-        {
-            CompanyName = "LNE Security A/S",
-            Country = Country.Denmark,
-            Currency = Currency.DKK,
-            Street = "Skibbyggerivej",
-            StreetNumber = "5",
-            City = "Aalborg",
-            Address = "9000"
-        }); */
-
-        // Vis skærmen med virksomhedsliste
-        //Screen.Display(new CompanyListPage());
+        new Database();
+        Database.Instance?.AddCompany(new() {Name = "Test", Street = "Teset", StreetNumber = "1", City = "Test", Country  = Country.China, Currency = Currency.DKK, PostCode = "1234"});
+        Database.Instance?.AddCompany(new() {Name = "Test2", Street = "Teset2", StreetNumber = "2", City = "Test2", Country = Country.Denmark, Currency = Currency.EUR, PostCode = "1234"});
         
-        //for now this doesn't do anything because for some reason CompanyListPage doesn't return any values
-        //But this is the way to go (at least we think)  
-        CompanyListPage companyListPage = new CompanyListPage();
-        TECHCOOL.UI.Menu menu = new TECHCOOL.UI.Menu();
-        menu.Add(companyListPage);
-        
-        
-        Screen.Display(menu);
-        //menu.Add(new CompanyListPage());
-        
-        //Screen.Display(new MyMenuScreen());
-        // Alternativt: vis andre screen
-        //Screen.Display(new MyFirstScreen());
-        //Screen.Display(new TodoListScreen());
+        CompanyListPage companylistpage = new();
+        Menu mainMenu = new();
+        mainMenu.Add(companylistpage); 
+        Screen.Display(mainMenu);
     }
 }
