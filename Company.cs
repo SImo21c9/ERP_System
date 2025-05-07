@@ -14,5 +14,5 @@ public class Company
     public string Address { get; set; } = "";       // Postnummer eller samlet adresse
     public Country Country { get; set; }            // Land
     public Currency Currency { get; set; }          // Valuta
-    public string CompanyName { get; set; }         // Visningsnavn (bruges i UI)
+    public string CompanyName { get; set; } // Visningsnavn (bruges i UI)
 }

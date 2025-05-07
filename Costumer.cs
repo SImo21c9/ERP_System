@@ -7,7 +7,7 @@ public class Costumer : Person
 {
     private static HashSet<string> existingCostumers = new HashSet<string>();
     private string costumerId;
-    public string Last_Purchase { get; set; } = DateTime.Now.ToString();
+    public string LastPurchase { get; set; } = DateTime.Now.ToString();
 
     public string CostumerId
     {
