@@ -1,12 +1,12 @@
 ﻿using TECHCOOL.UI;
 namespace ERP_System;
 
-public class CustomerEdit : Screen
+public class CustomerEditPage : Screen
 {
     public override string Title { get; set; } = "Customer";
     private Customer _customer;
 
-    public CustomerEdit(Customer customer)
+    public CustomerEditPage(Customer customer)
     {
         _customer = customer;
     }
@@ -36,10 +36,10 @@ public class CustomerEdit : Screen
         //HELLO DELETE ME PLEASE
         if (editForm.Edit(_customer))
         {
-            Database.Instance.UpdateCompany(_customer);
+            Database.Instance.UpdateCustomer(_customer);
         }
 
-        Display(new CompanyInfo(_customer));
+        Display(new CustomerInfo(_customer));
 
     }
 }
