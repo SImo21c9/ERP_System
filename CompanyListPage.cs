@@ -5,6 +5,7 @@ public partial class CompanyListPage : Screen
 {
     public override string Title { get; set; } = "Company";
 
+    
     protected override void Draw()
     {
 
