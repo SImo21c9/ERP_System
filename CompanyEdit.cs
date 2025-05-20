@@ -10,7 +10,6 @@ public class CompanyEdit : Screen
     {
         _company = company;
     }
-
     protected override void Draw()
     {
         Form<Company> editForm = new();
@@ -28,7 +27,6 @@ public class CompanyEdit : Screen
             Country.Germany,
             Country.Sweden
         };
-
         foreach (var country in topGdpCountries)
         {
             editForm.AddOption("Country", country.ToString(), country);
@@ -38,7 +36,6 @@ public class CompanyEdit : Screen
         {
             Database.Instance.UpdateCustomer(_company);
         }
-
         Display(new CompanyInfo(_company));
     }
 }
