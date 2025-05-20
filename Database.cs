@@ -4,13 +4,9 @@ using TECHCOOL.UI;
 // Singleton-del af Database-klassen, sikrer én global instans
 public partial class Database
 {
-    public static Database Instance { get; set; }
+    public static Database Instance { get; } = new Database();
 
-    public Database()
+    private Database()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
     }
 }

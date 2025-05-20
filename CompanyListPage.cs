@@ -1,17 +1,16 @@
 namespace ERP_System;
 using TECHCOOL.UI;
 using System.Linq;
+
 public partial class CompanyListPage : Screen
 {
     public override string Title { get; set; } = "Company";
 
-    
     protected override void Draw()
     {
-
         ListPage<Company> lp = new(); // Opret listevisning for virksomheder
         // Tilføj kolonner til visning
-        lp.AddColumn("Currency", nameof(Company.Currency));
+        lp.AddColumn("Currency", nameof(Company .Currency));
         lp.AddColumn("Country", nameof(Company.Country));
         lp.AddColumn("Company Name", nameof(Company.CompanyName));
         lp.AddColumn("City", nameof(Company.City));
@@ -19,30 +18,30 @@ public partial class CompanyListPage : Screen
         lp.AddColumn("Street Number", nameof(Company.StreetNumber));
         lp.AddColumn("Address", nameof(Company.Address));
 
-
         // Tilføj data fra databasen
-        lp.Add(Database.Instance.GetCompanies().ToList());
+        foreach (var company in Database.Instance.GetCompanies())
+        {
+            lp.Add(company);
+        }
 
-
-        Company selected = lp.Select(); // Start interaktiv visning
+        Company? selected = lp.Select(); // Start interaktiv visning
 
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
         switch (keyInfo.Key)
         {
-            case ConsoleKey.F1: // V4: Opret ny virksomhed
+            case ConsoleKey.F1: // Opret ny virksomhed
                 Company newCompany = new();
-                Database.Instance.AddCompany(newCompany);
                 Display(new CompanyEdit(newCompany));
                 break;
 
-            case ConsoleKey.F2: // V5: Rediger valgte virksomhed
+            case ConsoleKey.F2: // Rediger valgte virksomhed
                 if (selected != null)
                 {
                     Display(new CompanyEdit(selected));
                 }
                 break;
 
-            case ConsoleKey.F5: // V6: Slet valgte virksomhed
+            case ConsoleKey.F5: // Slet valgte virksomhed
                 if (selected != null)
                 {
                     Database.Instance.DeleteCompany(selected.CompanyId);

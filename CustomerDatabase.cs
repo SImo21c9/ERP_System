@@ -1,74 +1,74 @@
 ﻿namespace ERP_System;
 using TECHCOOL.UI;
 
-// H�ndterer lagring og adgang til virksomhedsdata
+// Håndterer lagring og adgang til kundedata
 public partial class Database
 {
-    private List<Company> customers = new(); // Intern liste over virksomheder
+    private List<Customer> customers = new(); // Intern liste over kunder
     private int nextCustomerId = 1;
 
-    // Finder og returnerer en virksomhed baseret p� dens ID, eller null hvis den ikke findes
-    public Company? GetCustomerById(int id)
+    // Finder og returnerer en kunde baseret på dens ID, eller null hvis den ikke findes
+    public Customer? GetCustomerById(int id)
     {
-        foreach (var company in companies)
+        foreach (var customer in customers)
         {
-            if (company.CompanyId == id)
+            if (customer.CustomerId == id)
             {
-                return company; // Fundet � return�r virksomheden
+                return customer; // Fundet – returnér kunden
             }
         }
-        return null; // Ikke fundet � return�r null
+        return null; // Ikke fundet – returnér null
     }
 
-    // Returnerer alle virksomheder i en array
-    public Company[] GetCustomers()
+    // Returnerer alle kunder i en array
+    public Customer[] GetCustomers()
     {
-        return companies.ToArray(); // Konverterer listen til et array
+        return customers.ToArray(); // Konverterer listen til et array
     }
 
-    // Tilf�jer en virksomhed hvis den endnu ikke har et ID
-    public void AddCustomer(Company company)
+    // Tilføjer en kunde hvis den endnu ikke har et ID
+    public void AddCustomer(Customer customer)
     {
-        if (company.CompanyId == 0)
+        if (customer.CustomerId == 0)
         {
-            company.CompanyId = nextCompanyId++;
-            company.Name = company.CompanyName; // Sørg for at Name også er sat
-            companies.Add(company);
+            customer.CustomerId = nextCustomerId++;
+            customer.Name = customer.CompanyName; // Sørg for at Name også er sat
+            customers.Add(customer);
         }
     }
 
-    // Opdaterer en eksisterende virksomhed, hvis ID findes
-    public void UpdateCustomer(Company company)
+    // Opdaterer en eksisterende kunde, hvis ID findes
+    public void UpdateCustomer(Customer customer)
     {
-        if (company.CompanyId == 0)
+        if (customer.CustomerId == 0)
         {
-            AddCompany(company);
-            return; // ID ikke angivet � kan ikke opdatere
+            AddCustomer(customer);
+            return; // ID ikke angivet – kan ikke opdatere
         }
 
-        Company? oldCompany = GetCompanyById(company.CompanyId);
-        if (oldCompany == null)
+        Customer? oldCustomer = GetCustomerById(customer.CustomerId);
+        if (oldCustomer == null)
         {
-            return; // Virksomheden findes ikke
+            return; // Kunden findes ikke
         }
 
-        oldCompany.CompanyName = company.CompanyName;
-        oldCompany.Name = company.CompanyName;
-        oldCompany.Street = company.Street;
-        oldCompany.StreetNumber = company.StreetNumber;
-        oldCompany.City = company.City;
-        oldCompany.Address = company.Address;
-        oldCompany.Country = company.Country;
-        oldCompany.Currency = company.Currency;
+        oldCustomer.CompanyName = customer.CompanyName;
+        oldCustomer.Name = customer.CompanyName;
+        oldCustomer.Street = customer.Street;
+        oldCustomer.StreetNumber = customer.StreetNumber;
+        oldCustomer.City = customer.City;
+        oldCustomer.Address = customer.Address;
+        oldCustomer.Country = customer.Country;
+        oldCustomer.Currency = customer.Currency;
     }
 
-    // Sletter en virksomhed baseret p� ID
+    // Sletter en kunde baseret på ID
     public void DeleteCustomer(int id)
     {
-        Company? found = GetCompanyById(id);
+        Customer? found = GetCustomerById(id);
         if (found != null)
         {
-            companies.Remove(found);
+            customers.Remove(found);
         }
     }
 }

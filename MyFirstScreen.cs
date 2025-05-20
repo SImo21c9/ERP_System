@@ -5,7 +5,7 @@ public class MyFirstScreen : Screen
 
     protected override void Draw()
     {
-        Clear(); // Rydder sk?rmen
+        Clear(); // Rydder skærmen
         Console.WriteLine("My first screen!"); // Simpel demo
     }
 }

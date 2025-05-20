@@ -14,12 +14,13 @@ public class CustomerEditPage : Screen
     protected override void Draw()
     {
         Form<Customer> editForm = new();
-        editForm.TextBox("Virksomhed", nameof(Company.CompanyName));
-        editForm.SelectBox("Currency", "Currency");
-        editForm.AddOption("Currency", "Dansk kroner", Currency.DKK);
-        editForm.AddOption("Currency", "Svenske kroner", Currency.SEK);
-        editForm.AddOption("Currency", "Euro", Currency.EUR);
-        editForm.SelectBox("Country", "Country");
+        editForm.TextBox("Virksomhed", nameof(Customer.CompanyName));
+        editForm.SelectBox("Currency", nameof(Customer.Currency));
+        editForm.AddOption(nameof(Customer.Currency), "Dansk kroner", Currency.DKK);
+        editForm.AddOption(nameof(Customer.Currency), "Svenske kroner", Currency.SEK);
+        editForm.AddOption(nameof(Customer.Currency), "Euro", Currency.EUR);
+        editForm.SelectBox("Country", nameof(Customer.Country));
+
         Country[] topGdpCountries = new[]
         {
             Country.UnitedStates,
@@ -31,15 +32,14 @@ public class CustomerEditPage : Screen
 
         foreach (var country in topGdpCountries)
         {
-            editForm.AddOption("Country", country.ToString(), country);
+            editForm.AddOption(nameof(Customer.Country), country.ToString(), country);
         }
-        //HELLO DELETE ME PLEASE
+
         if (editForm.Edit(_customer))
         {
             Database.Instance.UpdateCustomer(_customer);
         }
 
         Display(new CustomerInfo(_customer));
-
     }
 }

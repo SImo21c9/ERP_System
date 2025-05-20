@@ -6,7 +6,7 @@ public class TodoListScreen : Screen
 
     protected override void Draw()
     {
-        Clear(); // Rydder sk�rmen
+        Clear(); // Rydder skærmen
 
         ListPage<Todo> listPage = new ListPage<Todo>();
         

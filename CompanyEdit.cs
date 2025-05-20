@@ -5,12 +5,12 @@ public class CompanyEdit : Screen
 {
     public override string Title { get; set; } = "Company";
     private Company _company;
-    
+
     public CompanyEdit(Company company)
     {
         _company = company;
     }
-    
+
     protected override void Draw()
     {
         Form<Company> editForm = new();
@@ -33,13 +33,12 @@ public class CompanyEdit : Screen
         {
             editForm.AddOption("Country", country.ToString(), country);
         }
-        //HELLO DELETE ME PLEASE
+
         if (editForm.Edit(_company))
         {
-            Database.Instance.UpdateCompany(_company);
+            Database.Instance.UpdateCustomer(_company);
         }
 
         Display(new CompanyInfo(_company));
-        
     }
 }

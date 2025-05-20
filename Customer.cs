@@ -1,29 +1,29 @@
+using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.JavaScript;
 
 namespace ERP_System;
 
 public class Customer : Person
 {
-    private static HashSet<string> existingCostumers = new HashSet<string>();
-    private string costumerId;
-    public string LastPurchase { get; set; } = DateTime.Now.ToString();
+    private static HashSet<string> existingCustomers = new HashSet<string>();
 
-    public string CostumerId
-    {
-        get
-        {
-            return costumerId;
-        }
-        set
-        {
-            if (existingCostumers.Contains(value))
-            {
-                throw new ArgumentException("The Costumer Id already exists");
-            }
+    public int CustomerId { get; set; }
+    public int CompanyId { get; set; }              // ID (bruges til søgning/opdatering)
+    public string CompanyName { get; set; } = "";   // Visningsnavn (bruges i UI)
+    public string FirstName { get; set; } = "";
+    public string LastName { get; set; } = "";
+    public string Street { get; set; } = "";        // Vejnavn
+    public string StreetNumber { get; set; } = "";  // Husnummer
+    public string City { get; set; } = "";          // By
+    public string PostCode { get; set; } = "";      // Postnummer
+    public Country Country { get; set; }             // Land
+    public Currency Currency { get; set; }           // Valuta
 
-            costumerId = value;
-            existingCostumers.Add(value);
-        }
-    }
+    // Dynamisk beregnet adresse
+    public string Address => $"{Street} {StreetNumber}, {PostCode} {City}";
+    public string FullName => FirstName + " " + LastName;
+
+    public DateTime LastPurchase { get; set; } = DateTime.Now;
+
+    // Her kan du tilføje yderligere properties/metoder relevant for Customer
 }
