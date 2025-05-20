@@ -26,7 +26,7 @@ public partial class Database
         return companies.ToArray(); // Konverterer listen til et array
     }
 
-    // Tilf�jer en virksomhed hvis den endnu ikke har et ID
+    // Tilføjer en virksomhed hvis den endnu ikke har et ID
     public void AddCompany(Company company)
     {
         if (company.CompanyId == 0)

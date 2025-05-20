@@ -5,12 +5,10 @@ public class CustomerEditPage : Screen
 {
     public override string Title { get; set; } = "Customer";
     private Customer _customer;
-
     public CustomerEditPage(Customer customer)
     {
         _customer = customer;
     }
-
     protected override void Draw()
     {
         Form<Customer> editForm = new();
@@ -28,7 +26,6 @@ public class CustomerEditPage : Screen
             Country.Germany,
             Country.Sweden
         };
-
         foreach (var country in topGdpCountries)
         {
             editForm.AddOption("Country", country.ToString(), country);
@@ -38,8 +35,6 @@ public class CustomerEditPage : Screen
         {
             Database.Instance.UpdateCustomer(_customer);
         }
-
-        Display(new CustomerInfo(_customer));
-
+        Display(new CustomerDetailsPage(_customer));
     }
 }
