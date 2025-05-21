@@ -12,25 +12,15 @@ public class CustomerEditPage : Screen
     protected override void Draw()
     {
         Form<Customer> editForm = new();
-        editForm.TextBox("Virksomhed", nameof(Customer.CompanyName));
-        editForm.SelectBox("Currency", nameof(Customer.Currency));
-        editForm.AddOption(nameof(Customer.Currency), "Dansk kroner", Currency.DKK);
-        editForm.AddOption(nameof(Customer.Currency), "Svenske kroner", Currency.SEK);
-        editForm.AddOption(nameof(Customer.Currency), "Euro", Currency.EUR);
-        editForm.SelectBox("Country", nameof(Customer.Country));
-
-        Country[] topGdpCountries = new[]
-        {
-            Country.UnitedStates,
-            Country.Denmark,
-            Country.China,
-            Country.Germany,
-            Country.Sweden
-        };
-        foreach (var country in topGdpCountries)
-        {
-            editForm.AddOption(nameof(Customer.Country), country.ToString(), country);
-        }
+        editForm.TextBox("First Name", nameof(Customer.FirstName));
+        editForm.TextBox("Last Name", nameof(Customer.LastName));
+        editForm.TextBox("Email", nameof(Customer.Email));
+        editForm.TextBox("Street", nameof(Customer.Street));
+        editForm.TextBox("Street Number", nameof(Customer.StreetNumber));
+        editForm.TextBox("City", nameof(Customer.City));
+        editForm.TextBox("PostCode", nameof(Customer.PostCode));
+        editForm.TextBox("Country", nameof(Customer.Country));
+        editForm.IntBox("CustomerId", nameof(Customer.CustomerId));
 
         if (editForm.Edit(_customer))
         {

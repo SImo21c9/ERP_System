@@ -20,10 +20,20 @@ public class CustomerDetailsPage : Screen
     {
         Clear();
         Console.WriteLine($"Name: {_customer.FullName}");
-        Console.WriteLine($"Phone: {_customer.PhoneNumber}");
-        Console.WriteLine($"Email: {_customer.Email}");
-        // Fjernet Country og Currency, hvis ikke i Customer
+        Console.WriteLine($"LastPurchase:  {_customer.LastPurchase}");
+        Console.WriteLine($"Address: {_customer.Address}");
 
-        Console.ReadKey(true);
+        // Fjernet Country og Currency, hvis ikke i Customer
+        ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+        switch (keyInfo.Key)
+        {
+            case ConsoleKey.F2:
+            case ConsoleKey.F1:
+                Display(new CustomerEditPage(_customer));
+                break;
+            default:
+                break;
+        }
+        //Console.ReadKey(true);
     }
 }

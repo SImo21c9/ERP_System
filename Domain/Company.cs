@@ -22,7 +22,10 @@ public class Company
     public string StreetNumber
     {
         get => Address.HouseNumber;// Husnummer
-        set;
+        set
+        {
+            Address.HouseNumber = value;
+        }
     }
 
     public string PostCode { get; set; } = "";      // Postnummer
