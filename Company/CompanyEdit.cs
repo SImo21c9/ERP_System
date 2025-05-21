@@ -34,7 +34,7 @@ public class CompanyEdit : Screen
 
         if (editForm.Edit(_company))
         {
-            Database.Instance.UpdateCustomer(_company);
+            Database.Instance.UpdateCompany(_company);
         }
         Display(new CompanyInfo(_company));
     }
