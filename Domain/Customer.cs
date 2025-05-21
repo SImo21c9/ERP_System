@@ -19,7 +19,7 @@ public class Customer : Person
     public string Name { get; set; } = "";
 
 
-    public string costumerId { get; set; } = "";
+    public string CostumerId { get; set; } = "";
     
     public string LastPurchase { get; set; } = DateTime.Now.ToString();
     // Dynamisk beregnet adresse

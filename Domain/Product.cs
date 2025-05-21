@@ -15,11 +15,12 @@ public class Product
     public decimal SalesPrice { get; set; }               // Pris kunden betaler
     public decimal BoughtPrice { get; set; }             // Pris du har givet
     public string Location { get; set; } = "";           // F.eks. "A12B"
-    public decimal NumberInStorage { get; set; }            // Lagerantal i decimal
-    public Enhed Enhed { get; set; }                     // F.eks. styk, meter
+    public decimal QuantityInStock { get; set; }            // Lagerantal i decimal
+    public  int ProductId { get; set; }
+    public Enhed Unit { get; set; }                     // F.eks. styk, meter
 
     // Beregn fortjeneste (salgspris - indkøbspris)
-    public decimal Fortjeneste()
+    public decimal Profit()
     {
         return SalesPrice - BoughtPrice;
     }
@@ -28,6 +29,6 @@ public class Product
     public decimal AvanceProcent()
     {
         if (BoughtPrice == 0) return 0; // Undgå division med 0
-        return (Fortjeneste() / BoughtPrice) * 100;
+        return (Profit() / BoughtPrice) * 100;
     }
 }
