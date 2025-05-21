@@ -22,10 +22,10 @@ public class Company
     public string City { get; set; } = "";          // By
 
     public string Company_StreetNumber;
-    public string StreetNumber { get; set; }
+    public string StreetNumber
     {
-        get => Address.HouseNumber; // Husnummer
- 
+        get => Address.HouseNumber;// Husnummer
+        set;
     }
 
     public string PostCode { get; set; } = "";      // Postnummer
@@ -37,5 +37,4 @@ public class Company
     {
         get => $"{Street} {StreetNumber}, {PostCode} {City}";
     }
-
 }
