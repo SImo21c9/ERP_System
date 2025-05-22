@@ -14,7 +14,6 @@ public class Program
         mainMenu.Add(companylistpage); 
         Screen.Display(mainMenu);
         
-        
-        //a mistake on purpose 
+         //a mistake on purpose 
     }
 }
