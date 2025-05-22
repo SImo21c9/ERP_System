@@ -15,7 +15,6 @@ public class CustomerDetailsPage : Screen
     {
         _customer = customer;
     }
-
     protected override void Draw()
     {
         Clear();
@@ -34,6 +33,7 @@ public class CustomerDetailsPage : Screen
             default:
                 break;
         }
+        
         //Console.ReadKey(true);
     }
 }
