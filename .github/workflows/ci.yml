@@ -2,30 +2,27 @@ name: .NET Core Build and Test
 
 on:
   push:
-    branches:
-      - main  
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '9.0.x'
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
 
-    - name: Install dependencies
-      run: dotnet restore
+      - name: Install dependencies
+        run: dotnet restore
 
-    - name: Build the project
-      run: dotnet build --no-restore --configuration Release
+      - name: Build the project
+        run: dotnet build --no-restore --configuration Release
 
-    - name: Run tests
-      run: dotnet test --no-build --verbosity normal --configuration Release
+      - name: Run tests
+        run: dotnet test --no-build --verbosity normal --configuration Release
