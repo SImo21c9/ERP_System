@@ -34,6 +34,8 @@ public class SalesDatabase : SalesOrder
         if (!_salesOrders.ContainsKey(id)) return false;
         _salesOrders[id] = updatedOrder;
         return true;
+        
+        
     }
 
     // Slet salgsordre ud fra id

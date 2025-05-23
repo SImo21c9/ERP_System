@@ -6,6 +6,9 @@ public class SalesOrder
     public string OrderNumber { get; set; }
     public string CustomerId { get; set; }
     public DateTime OrderDate { get; set; }
-    public decimal TotalAmount { get; set; }
+    public decimal TotalAmount { get; set; } 
+    public string FirstName { get; set; } = "";
+
+   
     // Tilføj evt. flere felter som OrderLines, Status osv.
 }

@@ -1,5 +1,6 @@
 namespace ERP_System;
 using TECHCOOL.UI;
+using 
 
 // Singleton-del af Database-klassen, sikrer én global instans
 public partial class Database
@@ -13,4 +14,5 @@ public partial class Database
             Instance = this;
         }
     }
+
 }

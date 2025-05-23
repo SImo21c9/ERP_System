@@ -2,9 +2,11 @@
 
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
     <PackageReference Include="TECHCOOL" Version="1.5.0" />
     <PackageReference Include="xunit" Version="2.9.3" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <PropertyGroup>
