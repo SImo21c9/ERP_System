@@ -15,8 +15,8 @@ public class SalesOrderEdit : Screen
     {
         Form<SalesOrder> editForm = new();
          editForm.TextBox("First Name ", nameof(Customer.FirstName));
-         editForm.TextBox("", nameof(SalesOrder.Name));
-        // editForm.TextBox("Description ", nameof(Product.Description));
+         editForm.TextBox("Last Name", nameof(Customer.LastName));
+         editForm.TextBox("Street ", nameof(.Description));
         // editForm.TextBox("SalesPrice", nameof(Product.SalesPrice));
         // editForm.TextBox("BoughtPrce", nameof(Product.BoughtPrice));
         // editForm.TextBox("Location", nameof(Product.Location));
