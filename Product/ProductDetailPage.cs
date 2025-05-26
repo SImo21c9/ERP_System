@@ -9,6 +9,7 @@ public class ProductDetailPage : Screen
     protected override void Draw()
     {
         ListPage<Product> lp = new();
+        lp.AddKey(ConsoleKey.F1, createProduct);
         lp.AddColumn("ProductNumber", nameof(Product.ItemID));
         lp.AddColumn("Name", nameof(Product.Name));
         lp.AddColumn("Description", nameof(Product.Description));
@@ -42,6 +43,12 @@ public class ProductDetailPage : Screen
                 if (selected != null)
                     Display(new ProductEdit(selected));
                 break;
+        }
+
+        void createProduct(Product _)
+        {
+            Product newProduct = new();
+            Display(new ProductEdit(newProduct));
         }
     }
 }

@@ -14,8 +14,8 @@ public class SalesOrderEdit : Screen
     protected override void Draw()
     {
         Form<SalesOrder> editForm = new();
-        // editForm.TextBox("ProductNumber ", nameof(Product.ItemID));
-        // editForm.TextBox("Name ", nameof(Product.Name));
+         editForm.TextBox("First Name ", nameof(Customer.FirstName));
+         editForm.TextBox("", nameof(SalesOrder.Name));
         // editForm.TextBox("Description ", nameof(Product.Description));
         // editForm.TextBox("SalesPrice", nameof(Product.SalesPrice));
         // editForm.TextBox("BoughtPrce", nameof(Product.BoughtPrice));

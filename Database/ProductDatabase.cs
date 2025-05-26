@@ -1,3 +1,5 @@
+using Microsoft.Data.SqlClient;
+
 namespace ERP_System;
 using TECHCOOL.UI;
 
@@ -29,11 +31,21 @@ public partial class Database
     // Tilføjer en virksomhed hvis den endnu ikke har et ID
     public void AddProduct(Product product)
     {
+        
+        SqlConnection connection = GetConnection();
+        SqlCommand command = connection.CreateCommand();
         if (product.ProductId == 0)
         {
+            command.CommandText = "INSERT INTO Products () VALUES (@GF)";
+            command.Parameters.AddWithValue("@ProductId", nextProductId);
+            
             product.ProductId = nextProductId++;
             product.Name = product.ItemID; // Sørg for at Name også er sat
             products.Add(product);
+        }
+        else
+        {
+            command.CommandText = "UPDATE Products SET Name = @Name WHERE ProductId = @ProductId";
         }
     }
 

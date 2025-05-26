@@ -13,4 +13,6 @@ public class SalesOrder
     public List<Product> Products { get; set; } = new(); // Liste over produkter
     public string Name { get; set; } = "";          // Bruges til visning i UI
     public decimal TotalAmount { get; set; }        // Totalbeløb
+    
+
 }

@@ -6,6 +6,7 @@ public abstract class Person
     public string LastName { get; set; } = "";
     public string FullName => FirstName + " " + LastName;
     public Address Address { get; set; } = new Address();
+    public string Street => Address.Street;
     public string PhoneNumber { get; set; } = "";
     public string Email { get; set; } = "";
 

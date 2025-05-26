@@ -17,8 +17,9 @@ public partial class Database
     }
 
        private SqlConnection? _connection;
-        private void GetConnection()
+        private SqlConnection GetConnection()
         {
+            
             SqlConnectionStringBuilder builder = new();
             builder.DataSource = "DESKTOP-60TKD36";
             builder.UserID = "remo";
@@ -27,6 +28,7 @@ public partial class Database
             builder.TrustServerCertificate = true;
 
             _connection = new SqlConnection(builder.ToString());
+            return _connection; 
         }
 
 }
