@@ -9,6 +9,7 @@ public class CustomerEditPage : Screen
     {
         _customer = customer;
     }
+
     protected override void Draw()
     {
         Form<Customer> editForm = new();
@@ -19,7 +20,20 @@ public class CustomerEditPage : Screen
         editForm.TextBox("Street Number", nameof(Customer.StreetNumber));
         editForm.TextBox("City", nameof(Customer.City));
         editForm.TextBox("PostCode", nameof(Customer.PostCode));
-        editForm.TextBox("Country", nameof(Customer.Country));
+        editForm.SelectBox("Country", "Country");
+        Country[] topGdpCountries = new[]
+        {
+            Country.UnitedStates,
+            Country.Denmark,
+            Country.China,
+            Country.Germany,
+            Country.Sweden
+        };
+        foreach (var country in topGdpCountries)
+        {
+            editForm.AddOption("Country", country.ToString(), country);
+        }
+        
         editForm.IntBox("CustomerId", nameof(Customer.CustomerId));
 
         if (editForm.Edit(_customer))

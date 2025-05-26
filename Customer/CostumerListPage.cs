@@ -9,6 +9,7 @@ public class CustomerListPage : Screen
     protected override void Draw()
     {
         ListPage<Customer> lp = new();
+        lp.AddKey(ConsoleKey.F1, createCustomer);
         lp.AddColumn("Customer ID", nameof(Customer.CustomerId));
         lp.AddColumn("Name", nameof(Customer.FullName));
         lp.AddColumn("Phone", nameof(Customer.PhoneNumber));
@@ -20,6 +21,7 @@ public class CustomerListPage : Screen
         }
         Customer? selected = lp.Select();
 
+        
         ConsoleKeyInfo key = Console.ReadKey(true);
         switch (key.Key)
         {
@@ -36,5 +38,11 @@ public class CustomerListPage : Screen
                     Display(new CustomerDetailsPage(selected));
                 break;
         }
+    }
+
+    void createCustomer(Customer _)
+    {
+        Customer newCustomer = new();
+        Display(new CustomerEditPage(newCustomer));
     }
 }

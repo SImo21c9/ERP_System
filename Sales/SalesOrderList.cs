@@ -5,7 +5,7 @@ namespace ERP_System;
 public class SalesOrderList : Screen
 {
     public override string Title { get; set; } = "Salgsordreliste";
-
+    private SalesOrder _salesorder;
     protected override void Draw()
     {
         ListPage<SalesOrder> lp = new();
@@ -14,8 +14,17 @@ public class SalesOrderList : Screen
         lp.AddColumn("Dato", "OrderDate");
         lp.AddColumn("Kundenr", "CustomerId");
         lp.AddColumn("Kundenavn", "CustomerFullName");
-        lp.AddColumn("Beløb", "TotalAmount");
+        lp.AddColumn("Belï¿½b", "TotalAmount");
 
-        lp.Run(Database.Instance.GetSalesOrders());
+        ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+        switch  (keyInfo.Key)
+        {
+            case ConsoleKey.F2:
+            case ConsoleKey.F1:
+                Display(new SalesOrderEdit(_salesorder));
+                break;
+            default:
+                break;
+        }
     }
 }
