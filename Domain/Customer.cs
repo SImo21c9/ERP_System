@@ -17,6 +17,7 @@ public class Customer : Person
     public Country Country { get; set; }             // Land
     public Currency Currency { get; set; }           // Valuta
     public string Name { get; set; } = "";
+    
 
 
     public string CostumerId { get; set; } 
@@ -25,7 +26,7 @@ public class Customer : Person
     // Dynamisk beregnet adresse
     public string Customer_Address
     {
-        get => $"{Street} {StreetNumber}, {PostCode} {City}";
+        get => $"{Street} {StreetNumber}, {PostCode} {City}, ";
         
     }
     // customer full name 

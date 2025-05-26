@@ -9,7 +9,7 @@ public class SalesOrderList : Screen
     protected override void Draw()
     {
         ListPage<SalesOrder> lp = new();
-
+        lp.Add(ConsoleKey.F1, createOrder);
         lp.AddColumn("Ordrenr", "OrderNumber");
         lp.AddColumn("Dato", "OrderDate");
         lp.AddColumn("Kundenr", "CustomerId");
@@ -26,5 +26,11 @@ public class SalesOrderList : Screen
             default:
                 break;
         }
+    }
+
+    void createOrder(SalesOrder _)
+    {
+        SalesOrder salesOrder = new();
+        Display(new SalesOrderEdit(new SalesOrder()));
     }
 }

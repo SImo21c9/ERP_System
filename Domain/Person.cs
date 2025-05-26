@@ -9,6 +9,7 @@ public abstract class Person
     public string Street => Address.Street;
     public string PhoneNumber { get; set; } = "";
     public string Email { get; set; } = "";
+    public string HouseNumber { get; set; } = "";
 
     public string GetPersonInfo()
     {
