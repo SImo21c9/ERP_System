@@ -33,6 +33,8 @@ public partial class Database
             salesOrders.Add(order);
         }
     }
+    
+    
 
     public void UpdateSalesOrder(SalesOrder order)
     {
