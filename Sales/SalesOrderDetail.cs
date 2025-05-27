@@ -2,41 +2,35 @@ using TECHCOOL.UI;
 
 namespace ERP_System;
 
-public class SalesOrderDetail : Screen
+public class SalesOrderList : Screen
 {
-    public override string Title { get; set; } = "SalesOrderDetail";
-
+    public override string Title { get; set; } = "Salgsordreliste";
+    private SalesOrder _salesorder;
     protected override void Draw()
     {
         ListPage<SalesOrder> lp = new();
-        lp.AddColumn("OrderNumber",  nameof(SalesOrder.OrderNumber));
-        lp.AddColumn("OrderDate", nameof(SalesOrder.OrderDate));
-        lp.AddColumn("CustomerNumber", nameof(SalesOrder.CustomerId));
-        lp.AddColumn("Full name", nameof(Customer.FullName));
+        lp.AddKey(ConsoleKey.F1, createOrder);
+        lp.AddColumn("Ordrenr", "OrderNumber");
+        lp.AddColumn("Dato", "OrderDate");
+        lp.AddColumn("Kundenr", "CustomerId");
+        lp.AddColumn("Kundenavn", "CustomerFullName");
+        lp.AddColumn("Bel�b", "TotalAmount");
 
-        foreach (SalesOrder salesorder in Database.Instance.GetSalesOrders())
+        ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+        switch  (keyInfo.Key)
         {
-            lp.Add(salesorder);
-        }
-
-        SalesOrder? selected = lp.Select();
-        
-        ConsoleKeyInfo key = Console.ReadKey(true);
-        switch (key.Key)
-        {
-            case ConsoleKey.F1: // Opret
-                SalesOrder newSalesOrder = new();
-                Display(new SalesOrderEdit(newSalesOrder));
-                break;
-            case ConsoleKey.F2: // Rediger
-                if (selected != null)
-                    Display(new SalesOrderEdit(selected));
+            case ConsoleKey.F2:
+            case ConsoleKey.F1:
+                Display(new SalesOrderEdit(_salesorder));
                 break;
             default:
-                if (selected != null)
-                    Display(new SalesOrderEdit(selected));
                 break;
         }
     }
-        
+
+    void createOrder(SalesOrder _)
+    {
+        SalesOrder salesOrder = new();
+        Display(new SalesOrderEdit(new SalesOrder()));
+    }
 }
