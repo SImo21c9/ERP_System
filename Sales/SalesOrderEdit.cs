@@ -15,14 +15,13 @@ public class SalesOrderEdit : Screen
     {
         Form<SalesOrder> editForm = new();
          editForm.TextBox("First Name ", nameof(Customer.FirstName));
-         editForm.TextBox("", nameof(SalesOrder.Name));
-        // editForm.TextBox("Description ", nameof(Product.Description));
-        // editForm.TextBox("SalesPrice", nameof(Product.SalesPrice));
-        // editForm.TextBox("BoughtPrce", nameof(Product.BoughtPrice));
-        // editForm.TextBox("Location", nameof(Product.Location));
-        // editForm.TextBox("Quantity", nameof(Product.QuantityInStock));
-        // editForm.TextBox("Unit", nameof(Product.Unit));
-        // editForm.TextBox("ProductId", nameof(Product.ProductId));
+         editForm.TextBox("Last Name", nameof(Customer.LastName));
+         editForm.TextBox("Street ", nameof(Customer.Street));
+         editForm.TextBox("House Number", nameof(Customer.HouseNumber));
+         editForm.TextBox("PostCode", nameof(Customer.PostCode));
+         editForm.TextBox("City", nameof(Customer.City));
+         editForm.TextBox("Phone Number", nameof(Customer.PhoneNumber));
+         editForm.TextBox("Email", nameof(Customer.Email));
 
         if (editForm.Edit(_salesorder))
         {

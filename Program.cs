@@ -14,10 +14,12 @@ public class Program
         CompanyListPage companylistpage = new();
         CustomerListPage customerListPage = new();
         ProductDetailPage productListPage = new();
+        SalesOrderList salesOrderList = new();
         Menu mainMenu = new();
         mainMenu.Add(companylistpage); 
         mainMenu.Add(customerListPage);
         mainMenu.Add(productListPage);
+        mainMenu.Add(salesOrderList);
         Screen.Display(mainMenu);
     }
 }

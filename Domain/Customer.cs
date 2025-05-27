@@ -16,13 +16,14 @@ public class Customer : Person
 
 
 
+
     public string CostumerId { get; set; } 
     
     public string LastPurchase { get; set; } = DateTime.Now.ToString();
     // Dynamisk beregnet adresse
     public string Customer_Address
     {
-        get => $"{Street} {StreetNumber}, {PostCode} {City}";
+        get => $"{Street} {StreetNumber}, {PostCode} {City}, ";
         
     }
     // customer full name 
