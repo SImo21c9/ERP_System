@@ -19,16 +19,22 @@ public partial class Database
        private SqlConnection? _connection;
         private SqlConnection GetConnection()
         {
-            
-            SqlConnectionStringBuilder builder = new();
-            builder.DataSource = "DESKTOP-60TKD36";
-            builder.UserID = "remo";
-            builder.Password = "simon123";
-            builder.InitialCatalog = "ERP_SYSTEM";
-            builder.TrustServerCertificate = true;
+            try
+            {
+                SqlConnectionStringBuilder builder = new();
+                builder.DataSource = "DESKTOP-0PBVOB5";
+                builder.UserID = "Gruppe_Simon_Mikkel";
+                builder.Password = "simon123";
+                builder.InitialCatalog = "ERP_SYSTEM";
+                builder.TrustServerCertificate = true;
 
-            _connection = new SqlConnection(builder.ToString());
-            return _connection; 
+                _connection = new SqlConnection(builder.ToString());
+                _connection.Open();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return _connection;
         }
-
 }

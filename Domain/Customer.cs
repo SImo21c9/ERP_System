@@ -17,6 +17,7 @@ public class Customer : Person
     public Country Country { get; set; }             // Land
     public Currency Currency { get; set; }           // Valuta
     public string Name { get; set; } = "";
+    public string PhoneNumber { get; set; }
     
 
 

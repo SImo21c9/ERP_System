@@ -46,6 +46,19 @@ public partial class Database
         else
         {
             command.CommandText = "UPDATE Products SET Name = @Name WHERE ProductId = @ProductId";
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Product productadd = new();
+                productadd.ProductId = reader.GetInt32(0);
+                productadd.ItemID = reader.GetString(50);
+                productadd.Name = reader.GetString(60);
+                productadd.Description = reader.GetString(200);
+                productadd.SalesPrice = reader.GetDecimal(50);
+                productadd.Location = reader.GetString(60);
+                productadd.QuantityInStock = reader.GetInt32(0);
+                productadd.Unit = (Enhed) reader.GetInt32(0);
+            }
         }
     }
 

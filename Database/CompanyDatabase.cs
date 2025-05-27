@@ -60,6 +60,7 @@ public partial class Database
         oldCompany.Address = company.Address;
         oldCompany.Country = company.Country;
         oldCompany.Currency = company.Currency;
+        
     }
 
     // Sletter en virksomhed baseret p� ID
