@@ -2,7 +2,7 @@ using TECHCOOL.UI;
 
 namespace ERP_System;
 
-public class SalesOrderDetail : Screen
+public class SalesOrderList : Screen
 {
     public override string Title { get; set; } = "SalesOrderDetail";
 
