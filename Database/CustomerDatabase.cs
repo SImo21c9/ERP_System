@@ -32,7 +32,6 @@ public partial class Database
         if (customer.CustomerId == 0)
         {
             customer.CustomerId = nextCustomerId++;
-            customer.Name = customer.CompanyName; // Sørg for at Name også er sat
             customers.Add(customer);
         }
     }
@@ -53,13 +52,11 @@ public partial class Database
         }
 
         oldCustomer.CompanyName = customer.CompanyName;
-        oldCustomer.Name = customer.CompanyName;
         oldCustomer.Street = customer.Street;
         oldCustomer.StreetNumber = customer.StreetNumber;
         oldCustomer.City = customer.City;
         oldCustomer.Address = customer.Address;
         oldCustomer.Country = customer.Country;
-        oldCustomer.Currency = customer.Currency;
     }
 
     // Sletter en kunde baseret på ID
