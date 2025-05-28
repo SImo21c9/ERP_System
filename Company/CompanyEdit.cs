@@ -31,7 +31,6 @@ public class CompanyEdit : Screen
         {
             editForm.AddOption("Country", country.ToString(), country);
         }
-
         if (editForm.Edit(_company))
         {
             Database.Instance.UpdateCompany(_company);
