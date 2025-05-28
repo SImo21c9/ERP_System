@@ -1,4 +1,6 @@
 ﻿namespace ERP_System;
+
+using Microsoft.Data.SqlClient;
 using TECHCOOL.UI;
 
 // Håndterer lagring og adgang til kundedata
@@ -21,10 +23,21 @@ public partial class Database
     }
 
     // Returnerer alle kunder i en array
-    public Customer[] GetCustomers()
+    public List<Customer> GetCustomers()
     {
-        return customers.ToArray(); // Konverterer listen til et array
+        // Konverterer listen til et array
+        List<Customer> list = new List<Customer>();
+
+        SqlConnection conn = GetConnection();
+
+        SqlCommand cmd = conn.CreateCommand();
+
+        cmd.CommandText = "SELECT list FROM GetCustomers;";
+        
+
+        return list;
     }
+
 
     // Tilføjer en kunde hvis den endnu ikke har et ID
     public void AddCustomer(Customer customer)
