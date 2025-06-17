@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        nav {
+            background: black;
+            padding: 10px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            margin: 30px 20px ;
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px black;
+        }
+        
+        .contact-info input,
+        .contact-info textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+        
+        .contact-info button {
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .contact-info button:hover {
+            background: black;
+        }
+        
+        .contact-info label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="firsthtml.html" target="_blank">Home</a>
+        <a href="Interesting_Projects.html" target="_blank">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Contact Me</h1>
+    
+    <form>
+        <div class="contact-info">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Your Name">
+        </div>
+
+        <div class="contact-info">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Your Email">
+        </div>
+
+        <div class="contact-info">
+            <label>Message</label>
+            <textarea name="message" placeholder="Your message..." rows="5"></textarea>
+        </div>
+
+        <div class="contact-info">
+            <button type="submit">Send Message</button>
+        </div>
+    </form>
+</body>
+</html>
