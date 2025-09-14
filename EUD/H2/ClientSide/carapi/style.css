@@ -1,0 +1,35 @@
+h2 {
+    margin: 20px 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+label {
+    font-family: "Times New Roman";
+    font-size: large;
+}
+button {
+    margin-top: 15px;
+    width: 100px;
+    height: 50px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 40px;
+}
+th {
+    background: linear-gradient(45deg, #34495e, #2c3e50);
+    color: white;
+    padding: 15px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
